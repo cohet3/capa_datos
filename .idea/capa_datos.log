@@ -775,3 +775,13 @@
         Id Persona: 24, Nombre: Pepoto,
         Apellido: Robles, Email: pepiyo@gmail.com    
         
+12:30:52 PM: DEBUG [cursor_del_pool.py:10] Inicio del método with __enter__
+12:30:52 PM: DEBUG [Conexion.py:25] Creación de pool exitosa: <psycopg2.pool.SimpleConnectionPool object at 0x0000013DDF0F6770>
+12:30:52 PM: DEBUG [Conexion.py:35] Conexion obtenida del pool: <connection object at 0x0000013DDD1E17A0; dsn: 'user=postgres password=xxx dbname=test_db host=127.0.0.1 port=5432', closed: 0>
+12:30:52 PM: DEBUG [usuario_dao.py:31] Usuario a insertar: Usuario: None Pepoto Robles
+12:30:52 PM: DEBUG [cursor_del_pool.py:15] Se ejecuta método __exit__
+12:30:52 PM: ERROR [cursor_del_pool.py:18] Ocurrió una excepción, se hace rollback: syntax error at or near "user"
+LINE 1: INSERT INTO user(username, password) VALUES('Pepoto', 'Roble...
+                    ^
+ <class 'psycopg2.errors.SyntaxError'> <traceback object at 0x0000013DDF10FD80>
+12:30:52 PM: DEBUG [Conexion.py:40] Regresamos la conexión al pool: <connection object at 0x0000013DDD1E17A0; dsn: 'user=postgres password=xxx dbname=test_db host=127.0.0.1 port=5432', closed: 0>
